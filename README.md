@@ -1,6 +1,6 @@
 # FoodHub
 
-## Foodhub is delicvery aplication. The feature consist of:
+## Foodhub is a delivery application. The feature consists of:
 - Login/Register
 - Basic profile management
 - location tracking
