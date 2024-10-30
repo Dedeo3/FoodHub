@@ -26,6 +26,28 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.app.foodhub.R
 
 @Composable
+fun inputText() {
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+        var input by remember {
+            mutableStateOf("")
+        }
+
+        OutlinedTextField(
+            value = input, onValueChange = { input = it },
+            placeholder = { Text(text = "Enter username") },
+            leadingIcon = {Icon(painter = painterResource(id = R.drawable.person), contentDescription ="username" )},
+            keyboardOptions = KeyboardOptions(
+                keyboardType = KeyboardType.Text
+            )
+        )
+    }
+}
+
+@Composable
 fun PasswordTextField() {
     Column(
         modifier = Modifier
@@ -46,7 +68,7 @@ fun PasswordTextField() {
             onValueChange = {
                 password = it
             },
-            placeholder = { Text(text = "Password") },
+            placeholder = { Text(text = "Enter password") },
             leadingIcon = {
                 Icon(
                     painter = painterResource(id = R.drawable.baseline_lock_24),
@@ -83,6 +105,7 @@ fun PasswordTextFieldPreview() {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        PasswordTextField()
+        inputText()
+//        PasswordTextField()
     }
 }
