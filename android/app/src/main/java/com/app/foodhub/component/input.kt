@@ -1,9 +1,9 @@
 package com.app.foodhub.component
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -17,20 +17,18 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.app.foodhub.R
 
 @Composable
 fun inputText() {
     Column(
-        modifier = Modifier.fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+        horizontalAlignment = Alignment.Start, modifier = Modifier.fillMaxWidth()
     ) {
         var input by remember {
             mutableStateOf("")
@@ -38,6 +36,7 @@ fun inputText() {
 
         OutlinedTextField(
             value = input, onValueChange = { input = it },
+            modifier = Modifier.background(colorResource(id = R.color.light_gray), shape = RoundedCornerShape(8.dp)).fillMaxWidth(),
             placeholder = { Text(text = "Enter username") },
             leadingIcon = {Icon(painter = painterResource(id = R.drawable.person), contentDescription ="username" )},
             keyboardOptions = KeyboardOptions(
@@ -48,12 +47,10 @@ fun inputText() {
 }
 
 @Composable
-fun PasswordTextField() {
+fun passwordTextField(modifier: Modifier) {
     Column(
-        modifier = Modifier
-            .fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+        horizontalAlignment = Alignment.Start,
+        modifier = Modifier.fillMaxWidth()
     ) {
         var password by rememberSaveable { mutableStateOf("") }
         var passwordVisibility by remember { mutableStateOf(false) }
@@ -90,7 +87,8 @@ fun PasswordTextField() {
                 keyboardType = KeyboardType.Password
             ),
             visualTransformation = if (passwordVisibility) VisualTransformation.None
-            else PasswordVisualTransformation()
+            else PasswordVisualTransformation(),
+            modifier = Modifier.background(colorResource(id = R.color.light_gray), shape = RoundedCornerShape(8.dp)).fillMaxWidth()
         )
     }
 }
@@ -100,18 +98,18 @@ fun tes(){
     Text(text = "tes")
 }
 
-@Composable
-@Preview
-fun PasswordTextFieldPreview() {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(Color.White),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
-    ) {
-//        button(action = { tes() }, text = "hehe", buttonWidth = 300.dp, buttonHeight = 30.dp)
-//        inputText()
-//        PasswordTextField()
-    }
-}
+//@Composable
+//@Preview
+//fun PasswordTextFieldPreview() {
+//    Column(
+//        modifier = Modifier
+//            .fillMaxSize()
+//            .background(Color.White),
+//        horizontalAlignment = Alignment.CenterHorizontally,
+//        verticalArrangement = Arrangement.Center
+//    ) {
+////        button(action = { tes() }, text = "hehe", buttonWidth = 300.dp, buttonHeight = 30.dp)
+////        inputText()
+////        PasswordTextField()
+//    }
+//}
