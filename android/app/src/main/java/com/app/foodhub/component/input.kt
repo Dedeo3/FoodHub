@@ -96,6 +96,11 @@ fun PasswordTextField() {
 }
 
 @Composable
+fun tes(){
+    Text(text = "tes")
+}
+
+@Composable
 @Preview
 fun PasswordTextFieldPreview() {
     Column(
@@ -105,7 +110,8 @@ fun PasswordTextFieldPreview() {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        inputText()
+//        button(action = { tes() }, text = "hehe", buttonWidth = 300.dp, buttonHeight = 30.dp)
+//        inputText()
 //        PasswordTextField()
     }
 }
