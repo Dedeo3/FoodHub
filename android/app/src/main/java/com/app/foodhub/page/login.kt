@@ -92,8 +92,9 @@ fun login() {
         Spacer(modifier = Modifier.height(8.dp))
         
         Row(
-            verticalAlignment = Alignment.CenterVertically,
-            modifier = Modifier.padding(top = 10.dp)
+//            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Start,
+            modifier = Modifier.padding(top = 10.dp).fillMaxWidth()
         ) {
             Text(text = "Don't have an account?", fontWeight = FontWeight.Normal)
             Spacer(modifier = Modifier.width(4.dp))
