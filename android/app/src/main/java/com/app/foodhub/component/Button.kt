@@ -15,7 +15,7 @@ import com.app.foodhub.R
 
 
 @Composable
-fun button(action: @Composable ()->Unit, text: String, buttonHeight: Dp) {
+fun ButtonCustom(action: @Composable ()->Unit, text: String, buttonHeight: Dp) {
     Button(
         onClick = { action },
         colors = ButtonDefaults.buttonColors(containerColor = colorResource(id = R.color.primary)),

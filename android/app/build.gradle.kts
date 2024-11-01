@@ -76,4 +76,10 @@ dependencies {
     implementation (libs.androidx.lifecycle.viewmodel.ktx) //viewModelScope
     implementation (libs.androidx.lifecycle.livedata.ktx) //liveData
     implementation (libs.androidx.room.ktx)
+
+
+//    asynImage
+    implementation(libs.coil.compose)
+    implementation(libs.accompanist.coil) // Pastikan versinya yang terbaru
+
 }

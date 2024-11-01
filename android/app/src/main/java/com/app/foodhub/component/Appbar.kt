@@ -24,7 +24,7 @@ import androidx.compose.ui.unit.sp
 import com.app.foodhub.R
 
 @Composable
-fun appbar(){
+fun Appbar(){
     Row(
         Modifier
             .background(colorResource(id = R.color.primary))
@@ -52,6 +52,6 @@ fun LoginPreview() {
     Surface(
 //        modifier = Modifier.fillMaxSize()
     ) {
-        appbar()
+        Appbar()
     }
 }

@@ -28,12 +28,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.app.foodhub.R
-import com.app.foodhub.component.button
-import com.app.foodhub.component.inputText
-import com.app.foodhub.component.passwordTextField
+import com.app.foodhub.component.ButtonCustom
+import com.app.foodhub.component.InputText
+import com.app.foodhub.component.PasswordTextField
+
 
 @Composable
-fun login() {
+fun Login() {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
@@ -68,7 +69,7 @@ fun login() {
         ) {
             Text(text = "Username", fontWeight = FontWeight.Bold, fontSize = 16.sp)
             Spacer(modifier = Modifier.height(4.dp))
-            inputText()
+            InputText()
 
         }
 
@@ -81,7 +82,7 @@ fun login() {
         ) {
             Text(text = "Password", fontWeight = FontWeight.Bold, fontSize = 16.sp)
             Spacer(modifier = Modifier.height(4.dp))
-            passwordTextField(
+            PasswordTextField(
                 modifier = Modifier
                     .height(50.dp)
                     .background(Color.LightGray, shape = RoundedCornerShape(8.dp))
@@ -102,7 +103,7 @@ fun login() {
         }
 
         Spacer(modifier = Modifier.height(16.dp))
-        button(action = { /*TODO*/ }, text = "Login", buttonHeight = 50.dp )
+        ButtonCustom(action = { /*TODO*/ }, text = "Login", buttonHeight = 50.dp )
 }
 }
 
@@ -112,7 +113,7 @@ fun LoginPreview() {
     Surface(
         modifier = Modifier.fillMaxSize()
     ) {
-        login()
+        Login()
     }
 }
 
